@@ -47,10 +47,10 @@ const client = new PlaidApi(config);
 app.get("/api/create_link_token", async (req, res, next) => {
   const tokenResponse = await client.linkTokenCreate({
     user: { client_user_id: req.sessionID },
-    client_name: "Plaid's Tiny Quickstart",
+    client_name: "JCA Law Office",
     language: "en",
     products: ["auth"],
-    country_codes: ["US"],
+    country_codes: ["CA"],
     redirect_uri: process.env.PLAID_SANDBOX_REDIRECT_URI,
   });
   res.json(tokenResponse.data);
